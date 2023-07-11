@@ -18,7 +18,7 @@ export default {
       get("/domains", { project: 'slack' }).then(res => {
         console.log(res)
       }).catch(e => {
-        alert(e);
+        console.log(e)
       })
     }
   },

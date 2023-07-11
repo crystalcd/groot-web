@@ -33,6 +33,6 @@ export const showMessage = (status: number | string) => {
     default:
       msg = `${status || '请求失败'}!`
   }
-  console.log(msg)
+  console.log('status', msg)
   // ElMessage.error(msg)
 }
