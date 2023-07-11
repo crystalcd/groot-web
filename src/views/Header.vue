@@ -4,7 +4,8 @@
   </div>
   <button @click="add">add</button>
 </template>
-<script>
+<script lang="ts">
+import { get } from '@/http'
 export default {
   data() {
     return {
@@ -13,7 +14,12 @@ export default {
   },
   methods: {
     add() {
-      this.count++
+      this.count++;
+      get("/domains", { project: 'slack' }).then(res => {
+        console.log(res)
+      }).catch(e => {
+        alert(e);
+      })
     }
   },
   mounted() {
