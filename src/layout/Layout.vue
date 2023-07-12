@@ -1,7 +1,9 @@
 <template lang="">
   <div class="common-layout">
     <el-container>
-      <el-header>Header</el-header>
+      <el-header>
+        <Header></Header>
+      </el-header>
       <el-container>
         <el-aside width="200px">Aside</el-aside>
         <el-container>
@@ -15,4 +17,15 @@
 <script lang="ts">
 export default {}
 </script>
-<style lang=""></style>
+<style lang="css">
+.el-header {
+  background-color: #000033;
+}
+.el-main {
+  background-color: #cccccc;
+}
+.el-aside {
+  background-color: #006666;
+  height: 100vh;
+}
+</style>
