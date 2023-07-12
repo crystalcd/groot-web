@@ -1,6 +1,4 @@
-<template>
-  <h1>About</h1>
-
+<template lang="">
   <div class="common-layout">
     <el-container>
       <el-header>Header</el-header>
@@ -14,3 +12,7 @@
     </el-container>
   </div>
 </template>
+<script lang="ts">
+export default {}
+</script>
+<style lang=""></style>
