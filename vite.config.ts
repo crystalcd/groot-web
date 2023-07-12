@@ -16,24 +16,22 @@ export default defineConfig({
       resolvers: [
         ElementPlusResolver(),
         IconsResolver({
-          prefix: 'Icon',
+          prefix: 'Icon'
         })
-      ],
-      
+      ]
     }),
     Components({
       resolvers: [
         ElementPlusResolver(),
         IconsResolver({
-          enabledCollections: ['ep'],
+          enabledCollections: ['ep']
         })
       ],
-      dirs: ['src/components', 'src/layout'],
-      
+      dirs: ['src/components', 'src/layout']
     }),
     Icons({
-      autoInstall: true,
-    }),
+      autoInstall: true
+    })
   ],
   resolve: {
     alias: {

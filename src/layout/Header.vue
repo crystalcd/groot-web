@@ -8,7 +8,10 @@
   >
     <el-menu-item index="0">LOGO</el-menu-item>
     <div class="flex-grow" />
-
+ <div>
+    {{ count }}
+  </div>
+  <button @click="add">add</button>
     <el-menu-item index="1"> Processing Center </el-menu-item>
     <el-sub-menu index="2">
       <template #title>Workspace</template>
@@ -24,10 +27,7 @@
     </el-sub-menu>
   </el-menu>
 
-  <div>
-    {{ count }}
-  </div>
-  <button @click="add">add</button>
+ 
 </template>
 <script lang="ts">
 import { get } from '@/http'
