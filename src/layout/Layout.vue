@@ -12,6 +12,7 @@
             <el-icon color="#409EFC" class="no-inherit">
               <Share />
             </el-icon>
+            <el-icon><Plus /></el-icon>
           </el-main>
           <el-footer>Footer</el-footer>
         </el-container>
