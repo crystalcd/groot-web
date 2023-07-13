@@ -27,10 +27,7 @@ export default defineConfig({
           enabledCollections: ['ep']
         })
       ],
-      dirs: ['src/components', 'src/layout'],
-      include: [/\.vue$/, /\.vue\?vue/],
-      exclude: [/[\\/]node_modules[\\/]/, /[\\/]\.git[\\/]/, /[\\/]\.nuxt[\\/]/],
-      deep: true,
+      dirs: ['src/components', 'src/layout']
     }),
     Icons({
       autoInstall: true
