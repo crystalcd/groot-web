@@ -8,10 +8,12 @@
   >
     <el-menu-item index="0">LOGO</el-menu-item>
     <div class="flex-grow" />
- <div>
-    {{ count }}
-  </div>
-  <button @click="add">add</button>
+    <div>
+      {{ count }}
+    </div>
+    <el-button type="primary" icon="i-ep-add-location" circle @click="add" />
+    <el-button type="primary" icon="i-ep-search">搜索</el-button>
+    <i class="i-ep-edit"></i>
     <el-menu-item index="1"> Processing Center </el-menu-item>
     <el-sub-menu index="2">
       <template #title>Workspace</template>
@@ -26,8 +28,6 @@
       </el-sub-menu>
     </el-sub-menu>
   </el-menu>
-
- 
 </template>
 <script lang="ts">
 import { get } from '@/http'

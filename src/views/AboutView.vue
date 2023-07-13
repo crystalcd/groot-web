@@ -7,7 +7,11 @@
       <el-container>
         <el-aside width="200px">Aside</el-aside>
         <el-container>
-          <el-main>Main</el-main>
+          <el-main>
+            <el-button type="primary" icon="i-ep-add-location" circle />
+            <el-button type="primary" icon="i-ep-search">搜索</el-button>
+            <i class="i-ep-edit"></i>
+          </el-main>
           <el-footer>Footer</el-footer>
         </el-container>
       </el-container>
