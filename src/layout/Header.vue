@@ -8,13 +8,12 @@
   >
     <el-menu-item index="0">LOGO</el-menu-item>
     <div class="flex-grow" />
-    <div>
-      {{ count }}
+    <div style="line-height: 58px">
+      <el-button type="primary" circle @click="add">
+        <i-ep-edit></i-ep-edit>
+      </el-button>
     </div>
-    <el-button type="primary" icon="i-ep-add-location" circle @click="add" />
-    <el-button type="primary" icon="i-ep-search">搜索</el-button>
-    <i class="i-ep-edit"></i>
-    <el-menu-item index="1"> Processing Center </el-menu-item>
+
     <el-sub-menu index="2">
       <template #title>Workspace</template>
       <el-menu-item index="2-1">item one</el-menu-item>
@@ -28,6 +27,24 @@
       </el-sub-menu>
     </el-sub-menu>
   </el-menu>
+
+  <el-dialog v-model="dialogFormVisible" title="Start Scan">
+    <el-form :model="form">
+      <el-form-item label="Project name" :label-width="formLabelWidth">
+        <el-input v-model="form.name" autocomplete="off" />
+      </el-form-item>
+      <el-form-item label="Domains" :label-width="formLabelWidth">
+        <el-input v-model="form.domains" placeholder="Please input domains" type="textarea">
+        </el-input>
+      </el-form-item>
+    </el-form>
+    <template #footer>
+      <span class="dialog-footer">
+        <el-button @click="dialogFormVisible = false">Cancel</el-button>
+        <el-button type="primary" @click="onSubmit"> Confirm </el-button>
+      </span>
+    </template>
+  </el-dialog>
 </template>
 <script lang="ts">
 import { get } from '@/http'
@@ -35,12 +52,19 @@ export default {
   data() {
     return {
       count: 1,
-      activeIndex: 1
+      activeIndex: 2,
+      dialogFormVisible: false,
+      formLabelWidth: '140px',
+      form: {
+        name: '',
+        domains: ''
+      }
     }
   },
   methods: {
     add() {
       this.count++
+      this.dialogFormVisible = true
       get('/domains', { project: 'slack' })
         .then((res) => {
           console.log(res)
@@ -51,11 +75,12 @@ export default {
     },
     handleSelect(key: string, keyPath: string[]) {
       console.log(key, keyPath)
+    },
+    onSubmit() {
+      console.log(this.form)
     }
   },
-  mounted() {
-    this.add()
-  }
+  mounted() {}
 }
 </script>
 <style lang="css">
