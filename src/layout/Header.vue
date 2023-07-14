@@ -47,7 +47,7 @@
   </el-dialog>
 </template>
 <script lang="ts">
-import { get } from '@/http'
+import { get, post } from '@/http'
 export default {
   data() {
     return {
@@ -78,6 +78,10 @@ export default {
     },
     onSubmit() {
       console.log(this.form)
+      post('/domains', this.form).then((res) => {
+        console.log(res)
+      })
+      // this.dialogFormVisible = false
     }
   },
   mounted() {}
