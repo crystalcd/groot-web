@@ -27,7 +27,7 @@ export default defineConfig({
           enabledCollections: ['ep']
         })
       ],
-      dirs: ['src/components', 'src/layout']
+      dirs: ['src/components', 'src/layout', 'src/views']
     }),
     Icons({
       autoInstall: true

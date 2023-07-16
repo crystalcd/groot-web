@@ -6,7 +6,14 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: Layout
+      component: Layout,
+      children: [
+        {
+          path: '/database',
+          name: 'DataBase',
+          component: () => import('@/views/DataBase.vue')
+        }
+      ]
     },
     {
       path: '/about',

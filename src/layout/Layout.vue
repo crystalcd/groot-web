@@ -5,13 +5,17 @@
         <Header></Header>
       </el-header>
       <el-container>
-        <el-aside width="200px">Aside</el-aside>
+        <el-aside width="200px">
+          <Aside></Aside>
+        </el-aside>
         <el-container>
           <el-main>
             Main
             <el-icon color="#409EFC" class="no-inherit">
               <i-ep-add-location />
             </el-icon>
+
+            <router-view></router-view>
           </el-main>
           <el-footer>Footer</el-footer>
         </el-container>
