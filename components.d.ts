@@ -28,6 +28,7 @@ declare module 'vue' {
     ElRow: typeof import('element-plus/es')['ElRow']
     ElSelect: typeof import('element-plus/es')['ElSelect']
     ElSubMenu: typeof import('element-plus/es')['ElSubMenu']
+    ElTableV2: typeof import('element-plus/es')['ElTableV2']
     ElTree: typeof import('element-plus/es')['ElTree']
     Header: typeof import('./src/layout/Header.vue')['default']
     HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
