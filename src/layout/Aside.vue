@@ -1,5 +1,11 @@
 <template lang="">
-  <el-menu default-active="2" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose">
+  <el-menu
+    :default-active="activeMenu"
+    class="el-menu-vertical-demo"
+    @open="handleOpen"
+    @close="handleClose"
+    @select="handleMenuSelect"
+  >
     <el-sub-menu index="1">
       <template #title>
         <el-icon><location /></el-icon>
@@ -26,13 +32,25 @@
       <el-icon><document /></el-icon>
       <template #title>Navigator Three</template>
     </el-menu-item>
-    <el-menu-item index="4">
+    <el-menu-item index="/database">
       <el-icon><setting /></el-icon>
       <template #title>DataBase</template>
     </el-menu-item>
   </el-menu>
 </template>
 <script lang="ts">
-export default {}
+export default {
+  data() {
+    return {
+      activeMenu: '/'
+    }
+  },
+  methods: {
+    handleMenuSelect(index: any) {
+      this.activeMenu = index
+      this.$router.push(index)
+    }
+  }
+}
 </script>
 <style lang=""></style>
