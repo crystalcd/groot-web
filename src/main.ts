@@ -1,4 +1,4 @@
-import './assets/main.css'
+import './scss/styles.scss'
 // Import all of Bootstrap's JS
 
 import { createApp } from 'vue'

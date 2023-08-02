@@ -11,7 +11,10 @@
         <el-container>
           <el-main>
             Main
-            <button class="btn btn-primary">Primary button</button>
+            <div class="container py-4 px-3 mx-auto">
+              <h1>Hello, Bootstrap and Vite!</h1>
+              <button class="btn btn-primary">Primary button</button>
+            </div>
             <el-icon color="#409EFC" class="no-inherit">
               <i-ep-add-location />
             </el-icon>
