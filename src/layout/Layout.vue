@@ -30,17 +30,8 @@
 <script lang="ts">
 export default {}
 </script>
-<style lang="css">
-.el-header {
-  background-color: #000033;
-}
-
-/* .el-main {
-  background-color: #cccccc;
-} */
-
+<style lang="scss">
 .el-aside {
-  background-color: #006666;
   height: 100vh;
 }
 </style>
