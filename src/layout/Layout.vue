@@ -11,6 +11,7 @@
         <el-container>
           <el-main>
             Main
+            <button class="btn btn-primary">Primary button</button>
             <el-icon color="#409EFC" class="no-inherit">
               <i-ep-add-location />
             </el-icon>
