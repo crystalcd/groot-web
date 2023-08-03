@@ -9,24 +9,26 @@ const menus = [
   {
     path: '/home',
     name: '首页',
-    icon: 'house'
+    icon: 'House'
   },
   {
     path: '/about',
     name: '关于我们',
-    icon: 'info'
+    icon: 'Avatar'
   },
   {
     name: '产品',
-    icon: 'goods',
+    icon: 'House',
     children: [
       {
         path: '/product/list',
-        name: '产品列表'
+        name: '产品列表',
+        icon: 'Delete'
       },
       {
         path: '/product/detail',
-        name: '产品详情'
+        name: '产品详情',
+        icon: 'Delete'
       }
     ]
   },

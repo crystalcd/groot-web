@@ -21,3 +21,11 @@ const getComponentType = (item: { children: any }) => {
 }
 console.log('menu', props.menus)
 </script>
+<style lang="scss">
+@media (max-width: 767px) {
+  .menu {
+    display: flex;
+    flex-direction: row;
+  }
+}
+</style>

@@ -2,7 +2,9 @@
 
 <template>
   <el-menu-item :index="item.path" :key="item.name">
-    <i :class="`el-icon-${item.icon}`"></i>
+    <el-icon>
+      <DynamicIcon :icon="item.icon"></DynamicIcon>
+    </el-icon>
     <span>{{ item.name }}</span>
   </el-menu-item>
 </template>

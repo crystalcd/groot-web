@@ -10,6 +10,7 @@ declare module 'vue' {
     AboutView: typeof import('./src/views/AboutView.vue')['default']
     Aside: typeof import('./src/layout/Aside.vue')['default']
     DataBase: typeof import('./src/views/DataBase.vue')['default']
+    DynamicIcon: typeof import('./src/components/icons/DynamicIcon.vue')['default']
     ElAside: typeof import('element-plus/es')['ElAside']
     ElAvatar: typeof import('element-plus/es')['ElAvatar']
     ElButton: typeof import('element-plus/es')['ElButton']

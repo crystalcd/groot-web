@@ -4,7 +4,7 @@
   <el-sub-menu :index="item.path" :key="item.name">
     <template #title>
       <el-icon>
-        <Loading :is="item.icon" />
+        <DynamicIcon :icon="item.icon"></DynamicIcon>
       </el-icon>
       <span>{{ item.name }}</span>
     </template>
