@@ -1,7 +1,7 @@
-<template lang="">
+<template>
   <div class="common-layout">
     <el-container>
-      <el-header>
+      <el-header class="header-container">
         <Header></Header>
       </el-header>
       <el-container>
@@ -10,15 +10,6 @@
         </el-aside>
         <el-container>
           <el-main>
-            Main
-            <div class="container py-4 px-3 mx-auto">
-              <h1>Hello, Bootstrap and Vite!</h1>
-              <button class="btn btn-primary">Primary button</button>
-            </div>
-            <el-icon color="#409EFC" class="no-inherit">
-              <i-ep-add-location />
-            </el-icon>
-
             <router-view></router-view>
           </el-main>
           <el-footer>Footer</el-footer>
@@ -27,10 +18,14 @@
     </el-container>
   </div>
 </template>
-<script lang="ts">
-export default {}
-</script>
+<script lang="ts" setup></script>
 <style lang="scss">
+.header-container {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: $white;
+}
 .el-aside {
   height: 100vh;
 }

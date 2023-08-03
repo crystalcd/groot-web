@@ -1,32 +1,44 @@
 <template>
-  <h1>About</h1>
+  <el-header class="d-flex align-items-center">
+    <el-image class="me-3" :src="logoUrl" />
 
-  <div class="common-layout">
-    <el-container>
-      <el-header>Header</el-header>
-      <el-container>
-        <el-aside width="200px">Aside</el-aside>
-        <el-container>
-          <el-main>
-            <el-button type="primary" icon="i-ep-add-location" circle />
-            <el-button type="primary" icon="i-ep-search">搜索</el-button>
-            <i class="i-ep-edit"></i>
+    <el-input placeholder="搜索" class="search flex-grow-2" />
 
-            <el-row>
-              <el-button :icon="Search" circle />
-              <el-button type="primary" :icon="Edit" circle />
-              <el-button type="success" :icon="Check" circle />
-              <el-button type="info" :icon="Message" circle />
-              <el-button type="warning" :icon="Star" circle />
-              <el-button type="danger" :icon="Delete" circle />
-            </el-row>
-          </el-main>
-          <el-footer>Footer</el-footer>
-        </el-container>
-      </el-container>
-    </el-container>
-  </div>
+    <el-tooltip content="创建" placement="bottom">
+      <el-button circle :icon="Plus" />
+    </el-tooltip>
+
+    <el-avatar :src="avatarUrl" :size="40" class="ms-3" />
+  </el-header>
 </template>
+
 <script lang="ts" setup>
-import { Check, Delete, Edit, Message, Search, Star } from '@element-plus/icons-vue'
+import { ref } from 'vue'
+import { Plus } from '@element-plus/icons-vue'
+
+// 数据
+const logoUrl = ref('')
+const avatarUrl = ref('')
+
+// 方法
+function handleCreate() {
+  //...
+}
+
+// 暴露属性和方法
+defineExpose({
+  logoUrl,
+  avatarUrl,
+  handleCreate
+})
 </script>
+
+<style lang="scss">
+.el-header {
+  padding: 10px 20px;
+}
+.search {
+  flex: 0 0 30%;
+  margin: 0 auto;
+}
+</style>

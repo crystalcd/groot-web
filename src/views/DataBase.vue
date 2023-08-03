@@ -1,4 +1,4 @@
-<template lang="">
+<template>
   <div>MongoDB</div>
   <el-container>
     <el-aside width="200px">

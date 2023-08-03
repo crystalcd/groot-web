@@ -10,13 +10,13 @@ import Icons from 'unplugin-icons/vite'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  // css: {
-  //   preprocessorOptions: {
-  //     scss: {
-  //       additionalData: `@import "./src/styles/variables";`
-  //     }
-  //   }
-  // },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: `@import "./src/scss/variables.scss";`
+      }
+    }
+  },
   plugins: [
     vue(),
     AutoImport({

@@ -1,94 +1,41 @@
-<template lang="">
-  <el-menu
-    :default-active="activeIndex"
-    class="el-menu-demo"
-    mode="horizontal"
-    :ellipsis="false"
-    @select="handleSelect"
-  >
-    <el-menu-item index="0">LOGO</el-menu-item>
-    <div class="flex-grow" />
-    <div style="line-height: 58px">
-      <el-button type="primary" circle @click="add">
-        <i-ep-edit></i-ep-edit>
-      </el-button>
-    </div>
+<template>
+  <el-header class="d-flex align-items-center border-bottom">
+    <el-image class="me-3" :src="logoUrl" />
 
-    <el-sub-menu index="2">
-      <template #title>Workspace</template>
-      <el-menu-item index="2-1">item one</el-menu-item>
-      <el-menu-item index="2-2">item two</el-menu-item>
-      <el-menu-item index="2-3">item three</el-menu-item>
-      <el-sub-menu index="2-4">
-        <template #title>item four</template>
-        <el-menu-item index="2-4-1">item one</el-menu-item>
-        <el-menu-item index="2-4-2">item two</el-menu-item>
-        <el-menu-item index="2-4-3">item three</el-menu-item>
-      </el-sub-menu>
-    </el-sub-menu>
-  </el-menu>
+    <el-input placeholder="搜索" class="search flex-grow-2" />
 
-  <el-dialog v-model="dialogFormVisible" title="Start Scan">
-    <el-form :model="form">
-      <el-form-item label="Project name" :label-width="formLabelWidth">
-        <el-input v-model="form.name" autocomplete="off" />
-      </el-form-item>
-      <el-form-item label="Domains" :label-width="formLabelWidth">
-        <el-input v-model="form.domains" placeholder="Please input domains" type="textarea">
-        </el-input>
-      </el-form-item>
-    </el-form>
-    <template #footer>
-      <span class="dialog-footer">
-        <el-button @click="dialogFormVisible = false">Cancel</el-button>
-        <el-button type="primary" @click="onSubmit"> Confirm </el-button>
-      </span>
-    </template>
-  </el-dialog>
+    <el-tooltip content="创建" placement="bottom">
+      <el-button circle :icon="Plus" />
+    </el-tooltip>
+
+    <el-avatar :src="avatarUrl" :size="40" class="ms-3" />
+  </el-header>
 </template>
-<script lang="ts">
-import { get, post } from '@/http'
-export default {
-  data() {
-    return {
-      count: 1,
-      activeIndex: 2,
-      dialogFormVisible: false,
-      formLabelWidth: '140px',
-      form: {
-        name: '',
-        domains: ''
-      }
-    }
-  },
-  methods: {
-    add() {
-      this.count++
-      this.dialogFormVisible = true
-      get('/domains', { project: 'slack' })
-        .then((res) => {
-          console.log(res)
-        })
-        .catch((e) => {
-          console.log(e)
-        })
-    },
-    handleSelect(key: string, keyPath: string[]) {
-      console.log(key, keyPath)
-    },
-    onSubmit() {
-      console.log(this.form)
-      post('/domains', this.form).then((res) => {
-        console.log(res)
-      })
-      // this.dialogFormVisible = false
-    }
-  },
-  mounted() {}
+
+<script lang="ts" setup>
+import { ref } from 'vue'
+import { Plus } from '@element-plus/icons-vue'
+
+// 数据
+const logoUrl = ref('')
+const avatarUrl = ref('')
+
+// 方法
+function handleCreate() {
+  //...
 }
+
+// 暴露属性和方法
+defineExpose({
+  logoUrl,
+  avatarUrl,
+  handleCreate
+})
 </script>
-<style lang="css">
-.flex-grow {
-  flex-grow: 1;
+
+<style lang="scss">
+.search {
+  flex: 0 0 30%;
+  margin: 0 auto;
 }
 </style>
