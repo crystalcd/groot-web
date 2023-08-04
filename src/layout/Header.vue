@@ -1,15 +1,13 @@
 <template>
-  <el-header class="d-flex align-items-center border-bottom">
-    <el-image class="me-3" :src="logoUrl" />
+  <el-image class="me-3" :src="logoUrl" />
 
-    <el-input placeholder="搜索" class="search flex-grow-2" />
+  <el-input placeholder="搜索" class="search flex-grow-2" />
 
-    <el-tooltip content="创建" placement="bottom">
-      <el-button circle :icon="Plus" />
-    </el-tooltip>
+  <el-tooltip content="创建" placement="bottom">
+    <el-button circle :icon="Plus" />
+  </el-tooltip>
 
-    <el-avatar :src="avatarUrl" :size="40" class="ms-3" />
-  </el-header>
+  <el-avatar :src="avatarUrl" :size="40" class="ms-3" />
 </template>
 
 <script lang="ts" setup>

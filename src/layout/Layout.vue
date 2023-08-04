@@ -1,6 +1,6 @@
 <template>
   <div>
-    <el-header>
+    <el-header class="d-flex align-items-center border-bottom">
       <Header> </Header>
     </el-header>
     <el-header v-if="isMobile" class="d-flex align-items-center border-bottom">
