@@ -13,7 +13,15 @@
 <script lang="ts" setup>
 import { ref } from 'vue'
 import { Plus } from '@element-plus/icons-vue'
+import { breakpointsTailwind, useBreakpoints } from '@vueuse/core'
 
+const breakpoints = useBreakpoints(breakpointsTailwind)
+
+const smAndLarger = breakpoints.greaterOrEqual('sm') // sm and larger
+const largerThanSm = breakpoints.greater('sm') // only larger than sm
+const lgAndSmaller = breakpoints.smallerOrEqual('lg') // lg and smaller
+const smallerThanLg = breakpoints.smaller('lg')
+console.log(smAndLarger, largerThanSm, lgAndSmaller, smallerThanLg)
 // 数据
 const logoUrl = ref('')
 const avatarUrl = ref('')
