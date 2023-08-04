@@ -17,13 +17,12 @@ const menus = [
     icon: 'Avatar'
   },
   {
-    name: '产品',
+    name: 'Demo',
     icon: 'House',
     children: [
       {
-        path: '/product/list',
-        name: '产品列表',
-        icon: 'Delete'
+        path: 'demo/usebreakpoint',
+        name: 'UseBreakPoint'
       },
       {
         path: '/product/detail',

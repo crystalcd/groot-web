@@ -15,6 +15,11 @@ const router = createRouter({
           component: () => import('@/views/HomeView.vue')
         },
         {
+          path: 'demo/usebreakpoint',
+          name: 'UseBreadkPonts',
+          component: () => import('@/views/demo/UseBreakpoints.vue')
+        },
+        {
           path: '/database',
           name: 'DataBase',
           component: () => import('@/views/DataBase.vue')
