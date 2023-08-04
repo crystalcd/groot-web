@@ -1,24 +1,53 @@
 <template>
-  <div class="common-layout">
+  <div>
+    <el-header>
+      <Header> </Header>
+    </el-header>
+    <el-header v-if="isMobile" class="d-flex align-items-center border-bottom">
+      <el-button :icon="Menu" @click="customClickHandler">菜单 </el-button>
+    </el-header>
     <el-container>
-      <el-header class="header-container">
-        <Header></Header>
-      </el-header>
+      <el-aside v-if="!isMobile" width="200px">
+        <Aside></Aside>
+      </el-aside>
       <el-container>
-        <el-aside width="200px">
-          <Aside></Aside>
-        </el-aside>
-        <el-container>
-          <el-main>
-            <router-view></router-view>
-          </el-main>
-          <el-footer>Footer</el-footer>
-        </el-container>
+        <el-main>
+          <router-view></router-view>
+        </el-main>
+        <el-footer>Footer</el-footer>
       </el-container>
     </el-container>
+    <el-drawer
+      v-if="isMobile"
+      v-model="drawerVisible"
+      :with-header="false"
+      direction="ltr"
+      size="70%"
+    >
+      <Aside></Aside>
+    </el-drawer>
   </div>
 </template>
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import { ref, onMounted } from 'vue'
+import { Menu } from '@element-plus/icons-vue'
+const isMobile = ref(window.innerWidth < 768)
+const drawerVisible = ref(false)
+const handleResize = () => {
+  let width = window.innerWidth
+  isMobile.value = width < 768
+  console.log(width)
+}
+
+onMounted(() => {
+  window.addEventListener('resize', handleResize)
+})
+
+const customClickHandler = () => {
+  console.log(234)
+  drawerVisible.value = true
+}
+</script>
 <style lang="scss">
 .header-container {
   position: sticky;

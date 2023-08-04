@@ -27,5 +27,9 @@ console.log('menu', props.menus)
     display: flex;
     flex-direction: row;
   }
+  .el-menu {
+    border: none;
+    width: 100%;
+  }
 }
 </style>
