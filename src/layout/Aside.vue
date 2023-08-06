@@ -21,8 +21,12 @@ const menus = [
     icon: 'House',
     children: [
       {
-        path: 'demo/usebreakpoint',
+        path: '/demo/usebreakpoint',
         name: 'UseBreakPoint'
+      },
+      {
+        path: '/demo/container',
+        name: 'container'
       },
       {
         path: '/product/detail',

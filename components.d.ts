@@ -9,11 +9,13 @@ declare module 'vue' {
   export interface GlobalComponents {
     AboutView: typeof import('./src/views/AboutView.vue')['default']
     Aside: typeof import('./src/layout/Aside.vue')['default']
+    Container: typeof import('./src/views/demo/Container.vue')['default']
     DataBase: typeof import('./src/views/DataBase.vue')['default']
     DynamicIcon: typeof import('./src/components/icons/DynamicIcon.vue')['default']
     ElAside: typeof import('element-plus/es')['ElAside']
     ElAvatar: typeof import('element-plus/es')['ElAvatar']
     ElButton: typeof import('element-plus/es')['ElButton']
+    ElCol: typeof import('element-plus/es')['ElCol']
     ElContainer: typeof import('element-plus/es')['ElContainer']
     ElDialog: typeof import('element-plus/es')['ElDialog']
     ElDrawer: typeof import('element-plus/es')['ElDrawer']

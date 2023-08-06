@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Layout from '@/layout/Layout.vue'
+import ContainerVue from '@/views/demo/Container.vue'
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -18,6 +19,11 @@ const router = createRouter({
           path: 'demo/usebreakpoint',
           name: 'UseBreadkPonts',
           component: () => import('@/views/demo/UseBreakpoints.vue')
+        },
+        {
+          path: 'demo/container',
+          name: 'container',
+          component: ContainerVue
         },
         {
           path: '/database',
