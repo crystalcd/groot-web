@@ -1,7 +1,7 @@
 <template>
   <el-image class="me-3" :src="logoUrl" />
 
-  <el-input placeholder="搜索" class="search flex-grow-2" />
+  <el-input placeholder="搜索" class="search flex-grow-2 hidden-sm-and-down" />
 
   <el-tooltip content="创建" placement="bottom">
     <el-button circle :icon="Plus" />
@@ -14,6 +14,7 @@
 import { ref } from 'vue'
 import { Plus } from '@element-plus/icons-vue'
 import { breakpointsTailwind, useBreakpoints } from '@vueuse/core'
+import 'element-plus/theme-chalk/display.css'
 
 const breakpoints = useBreakpoints(breakpointsTailwind)
 

@@ -1,5 +1,4 @@
 import './scss/styles.scss'
-// Import all of Bootstrap's JS
 
 import { createApp } from 'vue'
 import App from './App.vue'

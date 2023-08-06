@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Layout from '@/layout/Layout.vue'
 import ContainerVue from '@/views/demo/Container.vue'
+import LayoutDemoVue from '@/views/demo/LayoutDemo.vue'
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -24,6 +25,11 @@ const router = createRouter({
           path: 'demo/container',
           name: 'container',
           component: ContainerVue
+        },
+        {
+          path: 'demo/layout',
+          name: 'layout',
+          component: LayoutDemoVue
         },
         {
           path: '/database',

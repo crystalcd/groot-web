@@ -29,6 +29,10 @@ const menus = [
         name: 'container'
       },
       {
+        path: '/demo/layout',
+        name: 'layout'
+      },
+      {
         path: '/product/detail',
         name: '产品详情',
         icon: 'Delete'
