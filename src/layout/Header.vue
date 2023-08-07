@@ -13,17 +13,11 @@
 
     <div class="xs-menu">
       <el-avatar :src="avatarUrl" :size="40" class="avatar ms-3" />
+      <!-- <Hanbeger></Hanbeger> -->
       <transition name="fade">
         <Icon class="menu-icon" :icon="publishedBooksMessage" width="24" @click="toggleMenu" />
       </transition>
 
-      <!-- <el-dialog v-model="isMenuOpen" :fullscreen="true" :show-close="false">
-        <template #header="{ close, titleId, titleClass }">
-          <div class="my-header">
-            <Icon class="menu-icon" :icon="'ri-close-fill'" width="24" @click="close" />
-          </div>
-        </template>
-      </el-dialog> -->
       <transition name="fade">
         <div v-if="isMenuOpen" class="full-screen">
           <h1>123</h1>

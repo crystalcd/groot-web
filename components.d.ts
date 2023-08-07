@@ -43,6 +43,7 @@ declare module 'vue' {
     ElTooltip: typeof import('element-plus/es')['ElTooltip']
     ElTree: typeof import('element-plus/es')['ElTree']
     GSubMenu: typeof import('./src/components/menu/GSubMenu.vue')['default']
+    Hanbeger: typeof import('./src/components/Hanbeger.vue')['default']
     Header: typeof import('./src/layout/Header.vue')['default']
     HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
     HomeView: typeof import('./src/views/HomeView.vue')['default']
