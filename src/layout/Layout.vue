@@ -1,10 +1,10 @@
 <template>
   <div>
-    <el-header class="d-flex align-items-center border-bottom header-container">
+    <el-header class="border-bottom header-container">
       <Header> </Header>
     </el-header>
     <el-header v-if="isMobile" class="d-flex align-items-center border-bottom">
-      <el-button :icon="Menu" @click="customClickHandler">菜单 </el-button>
+      <span @click="customClickHandler"> <Icon icon="ri:menu-2-fill" width="24" /> Menu </span>
     </el-header>
     <el-container>
       <el-aside v-if="!isMobile" width="200px">
@@ -31,6 +31,7 @@
 <script lang="ts" setup>
 import { ref, onMounted } from 'vue'
 import { Menu } from '@element-plus/icons-vue'
+import { Icon } from '@iconify/vue'
 const isMobile = ref(window.innerWidth < 768)
 const drawerVisible = ref(false)
 const handleResize = () => {
