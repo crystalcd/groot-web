@@ -6,7 +6,7 @@
     </div>
     <nav class="menu">
       <el-tooltip content="创建" placement="bottom">
-        <el-button circle :icon="Plus" />
+        <el-button circle :icon="Plus" @click="handleCreate" />
       </el-tooltip>
       <el-avatar :src="avatarUrl" :size="40" class="avatar ms-3" />
     </nav>
@@ -30,16 +30,39 @@
       </transition>
     </div>
   </header>
+
+  <el-dialog v-model="dialogFormVisible" title="Shipping address">
+    <el-form :model="form" label-width="120px">
+      <el-form-item label="Project Name">
+        <el-input v-model="form.name" />
+      </el-form-item>
+      <el-form-item label="Domains">
+        <el-input v-model="form.domains" type="textarea" />
+      </el-form-item>
+    </el-form>
+    <template #footer>
+      <span class="dialog-footer">
+        <el-button @click="dialogFormVisible = false">Cancel</el-button>
+        <el-button type="primary" @click="handleSubmit"> Confirm </el-button>
+      </span>
+    </template>
+  </el-dialog>
 </template>
 
 <script lang="ts" setup>
-import { computed, ref } from 'vue'
+import { computed, reactive, ref } from 'vue'
 import { Plus } from '@element-plus/icons-vue'
 import { breakpointsTailwind, useBreakpoints } from '@vueuse/core'
 import { Icon } from '@iconify/vue'
 import 'element-plus/theme-chalk/display.css'
+import { get, post } from '@/http'
 
 const isMenuOpen = ref(false)
+const dialogFormVisible = ref(false)
+const form = reactive({
+  name: '',
+  domains: ''
+})
 
 const toggleMenu = () => {
   isMenuOpen.value = !isMenuOpen.value
@@ -57,6 +80,18 @@ const avatarUrl = ref('')
 // 方法
 function handleCreate() {
   //...
+  dialogFormVisible.value = true
+}
+
+function handleSubmit() {
+  dialogFormVisible.value = false
+  const data = {
+    project_name: form.name,
+    domains: form.domains
+  }
+  post('/project', data).then((res) => {
+    console.log(res)
+  })
 }
 
 // 暴露属性和方法
