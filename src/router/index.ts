@@ -30,11 +30,6 @@ const router = createRouter({
           path: 'demo/layout',
           name: 'layout',
           component: LayoutDemoVue
-        },
-        {
-          path: '/database',
-          name: 'DataBase',
-          component: () => import('@/views/DataBase.vue')
         }
       ]
     },

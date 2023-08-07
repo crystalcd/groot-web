@@ -60,7 +60,10 @@
 </template>
 <script lang="ts" setup>
 import { Icon } from '@iconify/vue'
+import { ref } from 'vue'
 const show = ref(false)
+const isMenuOpen = ref(false)
+function toggleMenu() {}
 </script>
 <style lang="scss">
 .v-enter-active,
